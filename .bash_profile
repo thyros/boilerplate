@@ -55,6 +55,10 @@ git-diffall() {
     done    
 }
 
+git-diff-against() {
+  git difftool --dir-diff -y HEAD..origin/$1
+}
+
 if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
     GIT_PROMPT_ONLY_IN_REPO=1
     source $HOME/.bash-git-prompt/gitprompt.sh
